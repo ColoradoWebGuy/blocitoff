@@ -30,6 +30,8 @@ source 'https://rubygems.org'
  gem 'turbolinks'
  # Bootstrap framework
  gem 'bootstrap-sass'
+ # For authentication
+ gem 'devise'
  # Used for encrypting User passwords
  gem 'bcrypt'
  gem 'figaro', '1.0'
