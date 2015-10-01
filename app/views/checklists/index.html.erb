@@ -1,0 +1,8 @@
+<div class="well">
+  <h1>Checklists</h1>
+  <ul>
+    <% @checklists.each do |todo| %>
+     <li><%= link_to todo.title, checklist %></li>
+    <% end %>
+  <ul>
+</div>
