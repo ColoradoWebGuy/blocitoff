@@ -9616,3 +9616,53 @@ Migrating to AddUserToChecklists (20151001032304)
             FROM sqlite_temp_master
             WHERE name='index_users_on_email' AND type='index'
 [0m
+
+
+Started GET "/" for ::1 at 2015-10-01 07:01:51 -0600
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (5.1ms)
+Completed 200 OK in 396ms (Views: 384.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/checklists.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-10-01 07:01:52 -0600
+
+
+Started GET "/assets/welcome.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-10-01 07:01:52 -0600
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-10-01 07:01:52 -0600
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-10-01 07:01:52 -0600
+
+
+Started GET "/assets/checklists.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-10-01 07:01:52 -0600
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for ::1 at 2015-10-01 07:01:52 -0600
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-10-01 07:01:52 -0600
+
+
+Started GET "/assets/application.self-5405b81bf7dfecfd5f83966c283196adf55f76ef4a9851e3671529b536287e6b.css?body=1" for ::1 at 2015-10-01 07:01:52 -0600
+
+
+Started GET "/assets/bootstrap.self-6c92f650931beefe48977f272b7015d6b9b45da8b09831ebf88e05193c12d355.js?body=1" for ::1 at 2015-10-01 07:01:52 -0600
+
+
+Started GET "/assets/welcome.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-10-01 07:01:52 -0600
+
+
+Started GET "/users/sign_in" for ::1 at 2015-10-01 07:02:08 -0600
+Processing by Users::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (3.2ms)
+  Rendered users/sessions/new.html.erb within layouts/application (44.3ms)
+Completed 200 OK in 161ms (Views: 132.7ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/" for ::1 at 2015-10-01 07:02:10 -0600
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 83ms (Views: 82.0ms | ActiveRecord: 0.0ms)
