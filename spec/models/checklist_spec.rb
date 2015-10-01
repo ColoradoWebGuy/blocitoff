@@ -1,7 +1,11 @@
 require 'rails_helper'
 
 RSpec.describe Checklist, type: :model do
-  let(:checklist) { Checklist.create!(title: "Do Laundry", checked: false) }
+  let(:user) { create(:user) }
+  let(:checklist) { create(:checklist) }
+
+  it { should belong_to(:user) }
+  it { should validate_presence_of(:user) }
 
   describe "attributes" do
     it "should respond to title" do

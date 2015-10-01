@@ -1,8 +1,26 @@
-<div class="well">
-  <h1>Checklists</h1>
-  <ul>
-    <% @checklists.each do |todo| %>
-     <li><%= link_to todo.title, checklist %></li>
-    <% end %>
-  <ul>
+<div class="page-header">
+  <h1>My To-Do List <small>(there's always something...)</small></h1>
+</div>
+
+<div class="row">
+  <div class="col-xs-12">
+    <div class="well">
+      <% if !@checklists %>
+        <ul>
+          <% @checklists.each do |todo| %>
+           <li><%= link_to todo.title, checklist %></li>
+          <% end %>
+        <ul>
+      <% else %>
+        <h4><strong>Hmph, it appears to be empty. <%= link_to "Let's add a new task!", new_checklist_path %></strong></h4>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-xs-12">
+    <%= link_to "New Task", new_checklist_path, class: "btn btn-info pull-right", role: "button" %>
+    <br />
+  </div>
 </div>

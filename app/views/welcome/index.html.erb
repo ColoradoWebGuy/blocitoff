@@ -1,10 +1,17 @@
 <div class="jumbotron">
   <h1>Welcome <%= user_signed_in? ? "#{current_user.name}" : "to Blocitoff" %>!</h1>
 
-  <% if user_signed_in?
-    # checklist link
-     elsif %>
-    <p class="lead">A self-destructing to-do list to keep you focused on the things that really matter.</p>
-    <p><%= link_to "Sign up today", new_user_registration_path, class: "btn btn-lg btn-success", role: "button" %></p>
+  <% if user_signed_in? %>
+      <p class="lead">
+        Let's see your <%= link_to "checklist", checklists_path, class: "", role: "button" %>... <span class="glyphicon glyphicon-align-left" aria-hidden="true"></span>
+      </p>
+    <% elsif %>
+      <p class="lead">
+        A self-destructing to-do list to keep you focused on
+        the things that really matter.
+      </p>
+      <p>
+        <%= link_to "Sign up today", new_user_registration_path, class: "btn btn-lg btn-success", role: "button" %>
+      </p>
   <% end %>
 </div>
