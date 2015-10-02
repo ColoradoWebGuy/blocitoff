@@ -15,9 +15,9 @@ ActiveRecord::Schema.define(version: 20151001032304) do
 
   create_table "checklists", force: :cascade do |t|
     t.string   "title"
-    t.boolean  "checked"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.boolean  "checked",    default: false
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
     t.integer  "user_id"
   end
 

@@ -1,0 +1,8 @@
+
+ <%= form_for checklist do |f| %>
+   <%= form_group_tag(checklist.errors[:title]) do %>
+     <%= f.label :title %>
+     <%= f.text_field :title, class: 'form-control', placeholder: "Enter a new item to add" %>
+   <% end %>
+   <%= f.submit "Add item", class: 'btn btn-default pull-right' %>
+ <% end %>

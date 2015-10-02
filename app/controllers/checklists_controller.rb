@@ -4,15 +4,23 @@ class ChecklistsController < ApplicationController
     @checklists = Checklist.all
   end
 
-  def show
-    @checklist = Checklist.find(params[:id])
+  # create is a POST action
+  def create
+     @checklist = current_user.checklists.build(checklist_params)
+
+     # inspect the @checklist within the terminal.
+     Rails.logger.info ">>>>>> checklist: #{@checklist.inspect}"
+
+     if @checklist.save
+       redirect_to checklists_path, notice: "Item was saved successfully."
+     else
+       redirect_to checklists_path, alert: "Error creating item. Please try again."
+     end
   end
 
-  def new
-    @checklist = Checklist.new
-  end
+  private
 
-  def edit
-    @checklist = Checklist.find(params[:id])
-  end
+   def checklist_params
+     params.require(:checklist).permit(:title)
+   end
 end

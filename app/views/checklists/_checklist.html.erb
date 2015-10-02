@@ -1,0 +1,8 @@
+<%= content_tag :div, class: 'media', id: "checklist-#{checklist.id}" do %>
+   <div class="media-body">
+     <small>
+       Created at: <%= time_ago_in_words(checklist.created_at) %> ago
+     </small>
+     <p><%= checklist.title %></p>
+   </div>
+<% end %>

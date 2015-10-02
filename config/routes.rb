@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :checklists
+  resources :checklists, only: [:index, :create]
 
   devise_for :users, controllers: {
     sessions: 'users/sessions'
