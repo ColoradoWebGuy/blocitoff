@@ -1,25 +1,22 @@
 <div class="page-header">
   <h1>My To-Do List <small>(there's always something...)</small></h1>
 </div>
-
-<div class="row">
-  <div class="col-xs-12">
-    <div class="well">
-      <% unless @checklists.empty? %>
-        <%= render @checklists %>
-      <% else %>
-        <h4><strong>Hmph, it appears to be empty.</strong></h4>
-      <% end %>
-    </div>
-  </div>
-</div>
+<table class="table table-striped">
+  <% @checklists.each do |checklist| %>
+    <% unless checklist.title.blank? %>
+      <tr>
+        <td><%= checklist.title %></td>
+      </tr>
+    <% end %>
+  <% end %>
+</table>
 
 <div class="row">
   <div class="col-xs-12">
     <div class="">
        <% if current_user %>
          <div class='new-item'>
-           <%= render 'checklists/form', checklist: Checklist.new %>
+           <%= render 'checklists/form', checklist: @checklist %>
          </div>
        <% end %>
     </div>

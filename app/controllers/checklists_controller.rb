@@ -2,6 +2,7 @@ class ChecklistsController < ApplicationController
 
   def index
     @checklists = Checklist.all
+    @checklist = Checklist.new
   end
 
   # create is a POST action
@@ -14,7 +15,9 @@ class ChecklistsController < ApplicationController
      if @checklist.save
        redirect_to checklists_path, notice: "Item was saved successfully."
      else
-       redirect_to checklists_path, alert: "Error creating item. Please try again."
+       @checklists = Checklist.all
+       flash[:alert] = "Error creating item. Please try again."
+       render :index
      end
   end
 
