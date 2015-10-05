@@ -1,14 +1,30 @@
-<div class="page-header">
-  <h1>My To-Do List <small>(there's always something...)</small></h1>
+<div>
+  <h1>To-Do List</h1>
 </div>
+
 <table class="table table-striped">
+  <thead>
+    <tr>
+      <th>To-Do Title</th>
+      <th>Age</th>
+      <th><span class="pull-right">Actions</span></th>
+    </tr>
+  </thead>
+  <tbody>
   <% @checklists.each do |checklist| %>
     <% unless checklist.title.blank? %>
       <tr>
         <td><%= checklist.title %></td>
+        <td><%= time_ago_in_words(checklist.created_at) %> old</td>
+        <td>
+          <%= link_to '#', :class => "btn btn-danger pull-right" do %>
+            <i class="glyphicon glyphicon-trash"></i>
+          <% end %>
+        </td>
       </tr>
     <% end %>
   <% end %>
+  </tbody>
 </table>
 
 <div class="row">
