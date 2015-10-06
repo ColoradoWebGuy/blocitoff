@@ -1,8 +1,12 @@
 class ChecklistsController < ApplicationController
 
+  before_action :authenticate_user!
+
   def index
-    @checklists = Checklist.all
-    @checklist = Checklist.new
+    if visible_to?(current_user)
+      @checklists = current_user.checklists.all
+      @checklist = Checklist.new
+    end
   end
 
   # create is a POST action
@@ -47,6 +51,11 @@ class ChecklistsController < ApplicationController
    end
 
   private
+
+  def visible_to?(user)
+    user_signed_in? == user
+    true
+  end
 
    def checklist_params
      params.require(:checklist).permit(:title)
