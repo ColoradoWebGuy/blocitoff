@@ -21,6 +21,23 @@ class ChecklistsController < ApplicationController
      end
   end
 
+  def destroy
+     @checklist = current_user.checklists.find(params[:id])
+
+     if @checklist.destroy
+       redirect_to checklists_path, notice: "Item was deleted."
+     else
+       @checklists = Checklist.all
+       flash[:alert] = "Item couldn't be deleted. Try again."
+       render :index
+     end
+
+     #respond_to do |format|
+     # format.html
+     # format.js
+     #end
+   end
+
   private
 
    def checklist_params
