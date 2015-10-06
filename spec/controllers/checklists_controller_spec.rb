@@ -2,6 +2,7 @@ require 'rails_helper'
 
 RSpec.describe ChecklistsController, type: :controller do
 
+  login_user
   let (:my_checklist) { create(:checklist) }
 
   describe "GET index" do
