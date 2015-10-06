@@ -12,25 +12,7 @@
   </thead>
   <tbody>
   <% @checklists.each_with_index do |checklist, index| %>
-    <% unless checklist.title.blank? %>
-      <tr>
-        <td><%= index + 1  %>. <%= checklist.title %></td>
-        <td><%= time_ago_in_words(checklist.created_at) %> old</td>
-        <td>
-          <%= link_to(
-            checklist,
-            method: :delete,
-            :class => "btn btn-info pull-right",
-            :data => {
-              :toggle => "tooltip",
-              :placement => "top",
-              :title => "Complete & Delete Item"}) do %>
-            <i class="glyphicon glyphicon-ok"></i>
-          <% end %>
-
-        </td>
-      </tr>
-    <% end %>
+    <%= render "checklists/checklist", checklist: checklist, index: index %>
   <% end %>
   </tbody>
 </table>

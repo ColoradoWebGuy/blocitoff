@@ -19448,3 +19448,4 @@ Content-Transfer-Encoding: 7bit
   [1m[35m (0.6ms)[0m  commit transaction
   [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "users"[0m
   [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "checklists"
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "checklists"[0m

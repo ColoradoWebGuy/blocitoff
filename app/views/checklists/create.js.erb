@@ -1,0 +1,6 @@
+console.log("create.js.erb file");
+$('tbody').append("<%= escape_javascript( render partial: 'checklists/checklist', locals: { checklist: @checklist, index: @index }) %>");
+
+$(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+})

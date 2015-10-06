@@ -1,8 +1,19 @@
-<%= content_tag :div, class: 'media', id: "checklist-#{checklist.id}" do %>
-   <div class="media-body">
-     <small>
-       Created at: <%= time_ago_in_words(checklist.created_at) %> ago
-     </small>
-     <p><%= checklist.title %></p>
-   </div>
+<% unless checklist.title.blank? %>
+  <tr id="checklist-<%= checklist.id  %>">
+    <td><%= index + 1  %>. <%= checklist.title %></td>
+    <td><%= time_ago_in_words(checklist.created_at) %> old</td>
+    <td>
+      <%= link_to(
+        checklist,
+        method: :delete,
+        :class => "btn btn-info pull-right",
+        :data => {
+          :toggle => "tooltip",
+          :placement => "top",
+          :title => "Complete & Delete Item"},
+        remote: true) do %>
+        <i class="glyphicon glyphicon-ok"></i>
+      <% end %>
+    </td>
+  </tr>
 <% end %>

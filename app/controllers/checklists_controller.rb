@@ -13,11 +13,18 @@ class ChecklistsController < ApplicationController
      Rails.logger.info ">>>>>> checklist: #{@checklist.inspect}"
 
      if @checklist.save
-       redirect_to checklists_path, notice: "Item was saved successfully."
+       flash[:notice] = "Item was saved successfully."
+       @index = Checklist.count - 1
+       #@checklists = Checklist.all
+       #redirect_to checklists_path, notice: "Item was saved successfully."
      else
-       @checklists = Checklist.all
        flash[:alert] = "Error creating item. Please try again."
-       render :index
+       #render :index
+     end
+
+     respond_to do |format|
+      format.html
+      format.js
      end
   end
 
@@ -25,17 +32,18 @@ class ChecklistsController < ApplicationController
      @checklist = current_user.checklists.find(params[:id])
 
      if @checklist.destroy
-       redirect_to checklists_path, notice: "Item was deleted."
+       flash[:notice] = "Item was deleted."
+       #redirect_to checklists_path, notice: "Item was deleted."
      else
        @checklists = Checklist.all
        flash[:alert] = "Item couldn't be deleted. Try again."
-       render :index
+       #render :index
      end
 
-     #respond_to do |format|
-     # format.html
-     # format.js
-     #end
+     respond_to do |format|
+      format.html
+      format.js
+     end
    end
 
   private
