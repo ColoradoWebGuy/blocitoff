@@ -19449,3 +19449,28 @@ Content-Transfer-Encoding: 7bit
   [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "users"[0m
   [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "checklists"
   [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "checklists"[0m
+  [1m[36mChecklist Load (2.0ms)[0m  [1mSELECT "checklists".* FROM "checklists"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mUPDATE "checklists" SET "updated_at" = ? WHERE "checklists"."id" = ?[0m  [["updated_at", "2015-10-01 13:23:44.000000"], ["id", 63]]
+  [1m[35m (0.8ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  UPDATE "checklists" SET "created_at" = ?, "updated_at" = ? WHERE "checklists"."id" = ?  [["created_at", "2015-10-01 13:23:44.000000"], ["updated_at", "2015-10-06 13:47:23.777037"], ["id", 63]]
+  [1m[36m (4.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.8ms)[0m  [1mUPDATE "checklists" SET "updated_at" = ? WHERE "checklists"."id" = ?[0m  [["updated_at", "2015-10-01 13:23:44.000000"], ["id", 63]]
+  [1m[35m (5.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  UPDATE "checklists" SET "created_at" = ?, "updated_at" = ? WHERE "checklists"."id" = ?  [["created_at", "2015-09-29 13:23:44.000000"], ["updated_at", "2015-10-06 13:56:02.097772"], ["id", 63]]
+  [1m[36m (5.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mUPDATE "checklists" SET "created_at" = ?, "updated_at" = ? WHERE "checklists"."id" = ?[0m  [["created_at", "2015-09-28 13:23:44.000000"], ["updated_at", "2015-10-06 13:56:13.577486"], ["id", 63]]
+  [1m[35m (5.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "checklists" SET "created_at" = ?, "updated_at" = ? WHERE "checklists"."id" = ?  [["created_at", "2015-09-27 13:23:44.000000"], ["updated_at", "2015-10-06 13:57:00.916214"], ["id", 63]]
+  [1m[36m (2.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mUPDATE "checklists" SET "created_at" = ?, "updated_at" = ? WHERE "checklists"."id" = ?[0m  [["created_at", "2015-10-01 13:23:44.000000"], ["updated_at", "2015-10-06 14:02:02.029864"], ["id", 63]]
+  [1m[35m (6.9ms)[0m  commit transaction
+  [1m[36m (0.3ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "checklists" SET "created_at" = ?, "updated_at" = ? WHERE "checklists"."id" = ?  [["created_at", "2015-10-02 13:23:44.000000"], ["updated_at", "2015-10-06 14:02:10.226297"], ["id", 63]]
+  [1m[36m (3.7ms)[0m  [1mcommit transaction[0m
