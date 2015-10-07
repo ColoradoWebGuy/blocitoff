@@ -3,7 +3,7 @@
 
   <% if user_signed_in? %>
       <p class="lead">
-        Let's see your <%= link_to "checklist", checklists_path, class: "", role: "button" %>... <span class="glyphicon glyphicon-align-left" aria-hidden="true"></span>
+        <%= link_to "Click here to see your checklist", checklists_path, class: "", role: "button" %>
       </p>
     <% elsif %>
       <p class="lead">

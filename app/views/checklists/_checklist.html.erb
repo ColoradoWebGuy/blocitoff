@@ -1,6 +1,6 @@
 <% unless checklist.title.blank? %>
   <tr id="checklist-<%= checklist.id  %>">
-    <td><%= index + 1  %>. <%= checklist.title %></td>
+    <td><strong><%= checklist.title %></strong></td>
     <td class="text-center"><%= distance_of_time_in_words(checklist.created_at + 7.days, Time.now) %></td>
     <td>
       <%= link_to(

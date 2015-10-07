@@ -12,17 +12,20 @@
 <body>
   <div class="container">
     <br />
-    <% if notice %>
-    <div class="alert alert-info">
-      <a href="#" class="close" data-dismiss="alert">&times;</a>
-      <%= notice %>
-    </div>
-    <% elsif alert %>
-    <div class="alert alert-danger">
-      <a href="#" class="close" data-dismiss="alert">&times;</a>
-      <%= alert %>
-    </div>
-    <% end %>
+
+    <div class="flash">
+      <% if notice %>
+      <div class="alert alert-info">
+        <a href="#" class="close" data-dismiss="alert">&times;</a>
+        <%= notice %>
+      </div>
+      <% elsif alert %>
+      <div class="alert alert-danger">
+        <a href="#" class="close" data-dismiss="alert">&times;</a>
+        <%= alert %>
+      </div>
+      <% end %>
+    <div>
 
     <div class="header clearfix">
       <!--<nav>

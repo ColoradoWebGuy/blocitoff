@@ -1,5 +1,9 @@
-console.log("create.js.erb file");
-$('tbody').append("<%= escape_javascript( render partial: 'checklists/checklist', locals: { checklist: @checklist, index: @index }) %>");
+<% if @checklist.valid? %>
+  $('tbody').append("<%= escape_javascript( render partial: 'checklists/checklist', locals: { checklist: @checklist}) %>");
+  $('.new-item').html("<%= escape_javascript( render partial: 'checklists/form', locals: { checklist: @new_checklist }) %>");
+<% else %>
+  $('.new-item').html("<%= flash[:error] %><%= escape_javascript( render partial: 'checklists/form', locals: { checklist: @checklist }) %>");
+<% end %>
 
 $(function () {
   $('[data-toggle="tooltip"]').tooltip()

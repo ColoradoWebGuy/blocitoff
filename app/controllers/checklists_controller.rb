@@ -13,17 +13,15 @@ class ChecklistsController < ApplicationController
   def create
      @checklist = current_user.checklists.build(checklist_params)
 
+     @new_checklist = Checklist.new
+
      # inspect the @checklist within the terminal.
      Rails.logger.info ">>>>>> checklist: #{@checklist.inspect}"
 
      if @checklist.save
        flash[:notice] = "Item was saved successfully."
-       @index = Checklist.count - 1
-       #@checklists = Checklist.all
-       #redirect_to checklists_path, notice: "Item was saved successfully."
      else
        flash[:alert] = "Error creating item. Please try again."
-       #render :index
      end
 
      respond_to do |format|

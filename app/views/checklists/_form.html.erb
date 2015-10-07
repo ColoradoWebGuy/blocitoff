@@ -1,18 +1,18 @@
 
- <%= form_for( @checklist, remote: true) do |f| %>
+ <%= form_for checklist, remote: true do |f| %>
 
-    <% if @checklist.errors.any? %>
+    <% if checklist.errors.any? %>
     <div class="alert alert-danger">
-      <h4><%= pluralize(@checklist.errors.count, "error") %>.</h4>
+      <h4><%= pluralize(checklist.errors.count, "error") %>.</h4>
        <ul>
-         <% @checklist.errors.full_messages.each do |msg| %>
+         <% checklist.errors.full_messages.each do |msg| %>
            <li><%= msg %></li>
          <% end %>
        </ul>
      </div>
    <% end %>
 
-   <%= form_group_tag(@checklist.errors[:title]) do %>
+   <%= form_group_tag(checklist.errors[:title]) do %>
      <%= f.label :title %>
      <%= f.text_field :title, class: 'form-control', placeholder: "Enter a new item to add" %>
    <% end %>

@@ -1,2 +1,5 @@
-//console.log('What is called to hide: #checklist-'+<%= @checklist.id %>)
-$('#checklist-'+<%= @checklist.id %>).hide();
+<% if @checklist.destroyed? %>
+   $('#checklist-'+<%= @checklist.id %>).hide();
+<% else %>
+   $('.flash').prepend("<div class='alert alert-danger'><button type='button' class='close' data-dismiss='alert'>&times;</button><%= flash[:error] %></div>");
+<% end %>
